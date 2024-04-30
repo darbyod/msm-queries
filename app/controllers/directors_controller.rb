@@ -1,6 +1,9 @@
 class DirectorsController < ApplicationController
   
   def show_directors
+    
+    @directors = Director.all
+    
     render({ :template => "directors_templates/directors" })
   end
 
@@ -30,10 +33,6 @@ class DirectorsController < ApplicationController
   def show_directors_detail
 
     @director_id = params.fetch("director_id")
-
-    detail = Director.where({ :id => @director_id })
-    director_detail = detail.at(0)
-    @bio = director_detail.bio
 
     render({ :template => "directors_templates/directors_detail" })
   end

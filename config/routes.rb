@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
 
   get("/movies", { :controller => "movies", :action => "show_movies" })
+  get("/movies/:movie_id", { :controller => "movies", :action => "show_movies_detail" })
 
   get("/actors", { :controller => "actors", :action => "show_actors" })
-
+  get("/actors/:actor_id", { :controller => "actors", :action => "show_actors_detail" })
 
 end
